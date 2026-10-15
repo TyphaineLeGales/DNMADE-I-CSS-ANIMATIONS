@@ -15,6 +15,17 @@
 
 }
 
+body {
+    background-color: var(--bg-color);
+}
+
+p, h1, h2 {
+    padding: 0 56px;
+    font-family: "Balthazar", serif;
+    line-height:4.6rem;
+    display:block;
+}
+
 .start {
     height:100vh;
     display: flex;
@@ -36,7 +47,20 @@ rect {
     right:0;
     opacity: 0;
     transform: translate(0, -200px);
-    animation: opacityIn 0.8s ease-out forwards
+    animation: shapeIn 0.8s ease-out forwards
+}
+
+#yellowSquare {
+    background-color: yellow;
+    width: 125px;
+    height: 125px;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    transform-origin: left;
+    opacity: 1;
+    transform: translate(0, 200px);
+    animation: shapeIn 0.8s ease-out forwards
 }
 
 h1 {
@@ -109,7 +133,7 @@ h1 span:nth-child(7) { animation-delay: 0.88s; }
 h1 span:nth-child(8) { animation-delay: 1s; }
 
 
-@keyframes opacityIn {
+@keyframes shapeIn {
     to {
         opacity: 1;
         transform: translate(0, 0)
@@ -127,27 +151,6 @@ h1 span:nth-child(8) { animation-delay: 1s; }
     }
 }
 
-body {
-    background-color: var(--bg-color);
-}
-
-p, h1, h2 {
-    padding: 0 56px;
-    font-family: "Balthazar", serif;
-    line-height:4.6rem;
-    display:block;
-}
-
-#yellowSquare {
-    background-color: yellow;
-    width: 125px;
-    height: 125px;
-    position: fixed;
-    bottom: 0;
-    left:0;
-    transform-origin: left;
-    opacity: 1;
-}
 @keyframes appear {
     from {
         opacity: 0;

@@ -30,3 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         el.classList.add('red')
     })
 })
+
+document.addEventListener("click", () => {
+    document.querySelector(":root").classList.toggle("dark")
+})

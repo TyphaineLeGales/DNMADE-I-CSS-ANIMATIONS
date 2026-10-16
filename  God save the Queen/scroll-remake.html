@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les titres</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="index.js"></script>
+    <style>
+        body{
+            animation-name: color-blue;
+            animation-timeline: scroll();
+            margin: none;
+            border: none;
+            padding: none;
+        }
+
+        h1{
+            z-index: 10000000
+        }
+
+        .lobby{
+            z-index: 10000000;
+        }
+
+        .l-stripe{
+            background-color: red;
+            height: 358px;
+            width: 100%;
+            position: fixed;
+            top: 50%;
+            z-index: 100;
+            animation-name: stripe-anim-p;
+            animation-timeline: scroll();
+            animation-timing-function: cubic-bezier(0.42, 0, 1, 0.09);
+        }
+
+
+
+        .l-stripe1{
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            top: 50%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+            animation-timing-function: ease-in;
+        }
+
+        .l-stripe2{
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            top: 58%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+        }
+
+        .l-stripe3{
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            top: 66%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+            animation-timing-function: ease-out;
+        }
+
+        .l-stripe4{
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            top: 74%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+            animation-timing-function: ease-in;
+        }
+
+        .stripe-list{
+            top: 50%;
+        }
+
+
+        .s-left{
+            height: 100px;
+            width: 34px;
+            position: fixed;
+            left: 1;
+            background-color: rgb(176, 0, 0);
+            z-index: 10000000;
+        }
+
+        .s-right{
+            height: 100%;
+            width: 34px;
+            position: fixed;
+            background-color: rgb(176, 0, 0);
+            z-index: 10000;
+        }
+
+        .t-stripe-b {
+            background-color: white;
+            height: 260%;
+            width: 210px;
+            position: fixed;
+            top: -67%;
+            left: 44%;
+            z-index: -100;
+            transform: rotate(61deg);
+        }
+
+        .b2{
+            top: -68%;
+            right: 30%;
+            transform: rotate(-61deg);
+        }
+
+        .t-stripe-r {
+            background-color: red;
+            height: 50%;
+            width: 55px;
+            top: 0%;
+            left: 12%;
+            position: fixed;
+            animation-name: stripe-anim-t;
+            animation-timeline: scroll();
+        }
+
+        .t-stripe-r2 {
+            background-color: red;
+            height: 50%;
+            height: 100px;
+            width: 55px;
+            top: 50%;
+            left: 64%;
+            position: fixed;
+            animation-name: stripe-anim-t;
+            animation-timeline: scroll();
+        }
+
+
+
+        .text{
+            display: flex;
+            justify-content: center;
+        }
+
+        .lyrics{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            font-size: 20px;
+            animation-name: scroll-anim;
+            animation-duration: 3s;
+            animation-timeline: scroll();
+            color: black;
+            background-color: red;
+            z-index: 1000;
+        }
+
+        .queen{
+            color: white;
+            animation-name: jump;
+            animation-timeline: scroll();
+            animation-duration: 3s;
+        }
+
+        @keyframes color-blue {
+            0%{
+                background-color: black;
+            }
+            100%{
+                background-color: rgb(0, 0, 60);
+            }
+            
+        }
+
+
+        @keyframes jump {
+            0%{
+                font-size: 1em;
+            }
+            33%{
+                font-size: large;
+            }
+            66%{
+                font-size: 1em;
+                border-bottom: solid 2px white;
+            }
+            100%{
+                font-size: 35px;
+                border-bottom: solid 2px white;
+            }
+        }
+
+        @keyframes boite {
+            0%{
+                height: -1850px;
+            }
+            100%{
+                height: 7px;
+            }
+        }
+
+        @keyframes stripe-anim-t {
+            0%{
+                height: 0%;
+            background-color: rgb(176, 0, 0);
+            }
+            100%{
+                height: 50%;
+            background-color: rgb(197, 0, 0);
+            }
+        }
+
+
+        @keyframes stripe-anim {
+            0%{
+                width: 0%;
+            background-color: rgb(176, 0, 0);
+            }
+            100%{
+                width: 100%;
+            background-color: rgb(197, 0, 0);
+            }
+        }
+
+
+        @keyframes stripe-anim-p {
+            0%{
+                width: 0%;
+            background-color: red;
+            }
+            100%{
+                width: 100%;
+                background-color: red;
+            }
+        }
+
+/* ________________________________________________________ */
+        
+        /* @media screen and (min-width: 150px){
+            .l-stripe{
+            background-color: red;
+            height: 358px;
+            width: 100%;
+            position: fixed;
+            top: 50%;
+            z-index: 100;
+            animation-name: stripe-anim-p;
+            animation-timeline: scroll();
+            animation-timing-function: cubic-bezier(0.42, 0, 1, 0.09);
+        }
+
+
+
+        .l-stripe1{
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            top: 50%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+            animation-timing-function: ease-in;
+        }
+
+        .l-stripe2{
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            top: 59%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+        }
+
+        .l-stripe3{
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            top: 68%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+            animation-timing-function: ease-out;
+        }
+
+        .l-stripe4{
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            top: 77%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+            animation-timing-function: ease-in;
+        }
+
+        .stripe-list{
+            top: 50%;
+        }
+        }
+
+
+        .HIDE{
+            background-color: rgb(176, 0, 0);
+            width: 324px;
+            height: 2277px;
+            position: fixed;
+            bottom: -1850px;
+            animation-name: boite;
+            animation-timeline: scroll();
+            z-index: 1000;
+        }
+
+        @media screen (mix-width: 1000px) {
+            
+        }{
+        .l-stripe{
+            background-color: red;
+            height: 358px;
+            width: 100%;
+            position: fixed;
+            top: 50%;
+            z-index: 100;
+            animation-name: stripe-anim-p;
+            animation-timeline: scroll();
+            animation-timing-function: cubic-bezier(0.42, 0, 1, 0.09);
+        }
+
+
+
+        .l-stripe1{
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            top: 50%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+            animation-timing-function: ease-in;
+        }
+
+        .l-stripe2{
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            top: 58%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+        }
+
+        .l-stripe3{
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            top: 66%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+            animation-timing-function: ease-out;
+        }
+
+        .l-stripe4{
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            top: 74%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+            animation-timing-function: ease-in;
+        }
+
+        .stripe-list{
+            top: 50%;
+        }
+        } */
+
+
+
+    </style>
+</head>
+<body>
+
+    <h1>Les titres</h1>
+
+    <a href="index.html" class="lobby">Retour à l'accueil</a>
+
+    <div class="text">
+        <p class="lyrics">
+            God save the <span class="queen">Queen</span><br>
+            A fascist regime <br>
+            They made you a moron <br>
+            Potential H-bomb <br>
+            <br>
+            God save the <span class="queen">Queen</span> <br>
+            She's not a human being <br>
+            There is no future <br>
+            In England's dreaming <br>
+            <br>
+            Don't be told about what you want <br>
+            Don't be told about what you need <br>
+            No future, there's no future <br>
+            No future for you <br>
+            <br>
+            God save the <span class="queen">Queen</span> <br>
+            God say "bring your needs" <br>
+            God assigns and yet man pay <br>
+            <br>
+            God save the <span class="queen">Queen</span> <br>
+            Tourists are money <br>
+            And our figurehead <br>
+            Is not what she seems <br>
+            <br>
+            God save history <br>
+            God save your mad parade <br>
+            Lord God, have mercy <br>
+            All crimes are paid <br>
+            <br>
+            We're the flowers in the dustbin <br>
+            We're the poison in the human machine <br>
+            We're the romance, behind the scene <br>
+            We're the future, we're the future <br>
+            <br>
+            God save the <span class="queen">Queen</span> <br>
+            We mean it, man <br>
+            We love our <span class="queen">Queen</span> <br>
+            God saves <br>
+            <br>
+            God save the <span class="queen">Queen</span> <br>
+            Tourists are money <br>
+            And our figurehead <br>
+            Is not what she seems <br>
+
+            No future, no future <br>
+            No future, no future <br>
+            No future for you <br>
+            <br>
+            No future, no future <br>
+            No future for me <br>
+            <br>
+            No future, no future <br>
+            No future for you <br>
+            <br>
+            No future, no future <br>
+            No future for me <br>
+            <br>
+            No future, no future <br>
+            No future for you <br>
+            <br>
+            God save the <span class="queen">Queen</span> <br>
+            A fascist regime <br>
+            They made you a moron <br>
+            Potential H-bomb <br>
+            <br>
+            God save the <span class="queen">Queen</span> <br>
+            She's not a human being <br>
+            There is no future <br>
+            In England's dreaming <br>
+            <br>
+            Don't be told about what you want <br>
+            Don't be told about what you need <br>
+            No future, there's no future <br>
+            No future for you <br>
+            <br>
+            God save the <span class="queen">Queen</span> <br>
+            God say "bring your needs" <br>
+            God assigns and yet man pay <br>
+            <br>
+            God save the <span class="queen">Queen</span> <br>
+            Tourists are money <br>
+            And our figurehead <br>
+            Is not what she seems <br>
+            <br>
+            God save history <br>
+            God save your mad parade <br>
+            Lord God, have mercy <br>
+            All crimes are paid <br>
+            <br>
+            We're the flowers in the dustbin <br>
+            We're the poison in the human machine <br>
+            We're the romance, behind the scene <br>
+            We're the future, we're the future <br>
+            <br>
+            God save the <span class="queen">Queen</span> <br>
+            We mean it, man <br>
+            We love our <span class="queen">Queen</span> <br>
+            God saves <br>
+            <br>
+            God save the <span class="queen">Queen</span> <br>
+            Tourists are money <br>
+            And our figurehead <br>
+            Is not what she seems <br>
+
+            No future, no future <br>
+            No future, no future <br>
+            No future for you <br>
+            <br>
+            No future, no future <br>
+            No future for me <br>
+            <br>
+            No future, no future <br>
+            No future for you <br>
+            <br>
+            No future, no future <br>
+            No future for me <br>
+            <br>
+            No future, no future <br>
+            No future for you
+
+            <div class="HIDE"></div>
+            <div class="s-left"></div>
+            <div class="s-right"></div>
+        </p>
+    </div>
+
+    <div class="stripe-list">
+        <div class="l-stripe"></div>
+        <div class="l-stripe1"></div>
+        <div class="l-stripe2"></div>
+        <div class="l-stripe3"></div>
+        <div class="l-stripe4"></div>
+    </div>
+
+    <div class="t-stripe-b b1">
+        <div class="t-stripe-r"></div>
+        <div class="t-stripe-r2"></div>
+    </div>
+    <div class="t-stripe-b b2">
+        <div class="t-stripe-r"></div>
+        <div class="t-stripe-r2"></div>
+    </div>
+
+
+</body>
+</html>

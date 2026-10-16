@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les titres</title>
+    <link rel="stylesheet" href="css/style-sp.css">
+    <script src="index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap" rel="stylesheet">
+    <style>
+        body {
+            border: none;
+            margin: 0%;
+            background-color: rgb(0, 0, 60);
+        }
+
+        /* .title{
+
+        } */
+
+        .logo {
+            width: 250px;
+            position: relative;
+        }
+
+        .mode-switch {
+            box-shadow: 0px 1px 0px 0px #1c1b18;
+            background: linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+            background-color: #eae0c2;
+            border-radius: 15px;
+            border: 2px solid #333029;
+            display: inline-block;
+            cursor: pointer;
+            color: #505739;
+            font-family: Arial;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 12px 16px;
+            position: absolute;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #ffffff;
+        }
+
+        .mode-switch:hover {
+            background: linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+            background-color: #ccc2a6;
+        }
+
+        .mode-switch:active {
+            position: relative;
+            top: 1px;
+        }
+
+        /* .hide{
+            background-color: black;
+            width: 280px;
+            height: 40px;
+            top: 15%;
+            left: 50%;
+            position: fixed;
+            z-index: 10000000;
+            animation-name: hide-anim;
+            animation-timeline: scroll();
+        } */
+
+        @keyframes hide-anim {
+            from {
+                top: 15%;
+            }
+
+            to {
+                top: 95%;
+            }
+        }
+
+        @keyframes hide-anim {
+            from {
+                top: 15%;
+            }
+
+            to {
+                top: 95%;
+            }
+        }
+
+        @keyframes appears-b {
+            from{
+
+            }
+        }
+
+        .highlight:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .boxed:hover{
+            border: solid 2px white;
+        }
+
+
+        .container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            left: 50%;
+            z-index: 1000;
+            background-color: rgb(176, 0, 0);
+        }
+
+        .highlight {
+            animation-name: text-anim;
+            animation-duration: 1s;
+            animation-timeline: scroll();
+            font-size: 1.5em;
+        }
+
+        /* @keyframes text-anim {
+            from{
+                opacity: 0;
+                font-size: 1em;
+            }
+            to{
+                opacity: 1;
+                font-size: 5em;
+            }
+        } */
+
+        .lyrics {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            font-size: 20px;
+            animation-name: scroll-anim;
+            animation-duration: 3s;
+            animation-timeline: scroll();
+            color: black;
+            background-color: red;
+            z-index: 100000;
+        }
+
+        .l-stripe {
+            background-color: red;
+            height: 330px;
+            width: 100%;
+            position: fixed;
+            top: 38%;
+            z-index: 100;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: row;
+            animation-name: stripe-anim-p;
+            animation-timeline: scroll();
+            animation-timing-function: cubic-bezier(0.42, 0, 1, 0.09);
+        }
+
+
+
+        .l-stripe1 {
+            background-color: white;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+            display: flex;
+            align-self: flex-start;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+            animation-timing-function: ease-in;
+        }
+
+        .l-stripe2 {
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            display: flex;
+            align-self: center;
+            top: 46%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+        }
+
+        .l-stripe3 {
+            background-color: rgb(176, 0, 0);
+            height: 34px;
+            width: 100%;
+            position: fixed;
+            display: flex;
+            align-self: center;
+            top: 53%;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+            animation-timing-function: ease-out;
+        }
+
+        .l-stripe4 {
+            background-color: white;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+            display: flex;
+            align-self: flex-end;
+            z-index: 110;
+            animation-name: stripe-anim;
+            animation-timeline: scroll();
+            animation-timing-function: ease-in;
+        }
+
+
+        .t-stripe-b {
+            background-color: white;
+            height: 260%;
+            width: 210px;
+            position: fixed;
+            top: -76%;
+            left: 44%;
+            z-index: -100;
+            transform: rotate(61deg);
+            animation-name: stripe-anim-b;
+            animation-duration: 3s;
+        }
+
+        .b2 {
+            top: -81%;
+            right: 30%;
+            transform: rotate(-61deg);
+        }
+
+        .t-stripe-r {
+            background-color: red;
+            height: 50%;
+            width: 55px;
+            top: 0%;
+            left: 12%;
+            position: fixed;
+            animation-name: stripe-anim-t;
+            animation-timeline: scroll();
+        }
+
+        .t-stripe-r2 {
+            background-color: red;
+            height: 50%;
+            height: 100px;
+            width: 55px;
+            top: 50%;
+            left: 64%;
+            position: fixed;
+            animation-name: stripe-anim-t;
+            animation-timeline: scroll();
+        }
+
+        .s-left {
+            height: 100%;
+            width: 50px;
+            position: fixed;
+            background-color: white;
+            z-index: 1000000;
+        }
+
+        .s-right {
+            height: 100%;
+            width: 34px;
+            position: fixed;
+            background-color: white;
+            z-index: 10000;
+        }
+
+        @keyframes stripe-anim-t {
+            0% {
+                height: 0%;
+            }
+
+            100% {
+                height: 50%;
+            }
+        }
+
+        @keyframes stripe-anim {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes stripe-anim-b {
+            0% {
+                width: 0%;
+            }
+
+            50% {
+                width: 75%;
+            }
+            100%{
+                width: 210px;
+            }
+        }
+
+        @media screen and (max-width: 580px) {
+            .container {
+                width: 330px;
+                left: 50%;
+                height: 222%;
+            }
+        }
+
+        @media screen and (min-width: 580px) {
+            .container {
+                width: 330px;
+                height: 222%;
+                left: 44%;
+            }
+        }
+
+        @media screen and (mix-width: 1200px) {
+            .l-stripe {
+                background-color: red;
+                height: 330px;
+                width: 100%;
+                position: fixed;
+                top: 50%;
+                z-index: 100;
+                animation-name: stripe-anim-p;
+                animation-timeline: scroll();
+                animation-timing-function: cubic-bezier(0.42, 0, 1, 0.09);
+            }
+
+
+
+            .l-stripe1 {
+                top: 50%;
+            }
+
+            .l-stripe2 {
+                top: 58%;
+            }
+
+            .l-stripe3 {
+                top: 66%;
+            }
+
+            .l-stripe4 {
+                top: 74%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="title">
+        <img class="logo" src="media/Sex-Pistols-Logo.png" alt="">
+    </h1>
+
+    <br>
+
+    <button class="mode-switch">Light mod</button>
+
+    <div class="container">
+        dirred
+        <p class="lyrics">
+            <span class="highlight">God <span class="boxed">save</span> the <span class="boxed">Queen</span></span><br>
+            <span class="highlight">A fascist regime</span><br>
+            <span class="highlight">They made you a moron</span><br>
+            <span class="highlight">Potential H-bomb</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> the <span class="boxed">Queen</span></span><br>
+            <span class="highlight">She's not a human being</span><br>
+            <span class="highlight">There is no future</span><br>
+            <span class="highlight">In England's dreaming</span><br>
+            <br>
+            <span class="highlight">Don't be told about what you want</span><br>
+            <span class="highlight">Don't be told about what you need</span><br>
+            <span class="highlight">No future, there's no future</span><br>
+            <span class="highlight">No future for you</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> the <span class="boxed">Queen</span></span><br>
+            <span class="highlight">God say "bring your needs"</span><br>
+            <span class="highlight">God assigns and yet man pay</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> the <span class="boxed">Queen</span></span><br>
+            <span class="highlight">Tourists are money</span><br>
+            <span class="highlight">And our figurehead</span><br>
+            <span class="highlight">Is not what she seems</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> history</span><br>
+            <span class="highlight">God <span class="boxed">save</span> your mad parade</span><br>
+            <span class="highlight">Lord God, have mercy</span><br>
+            <span class="highlight">All crimes are paid</span><br>
+            <br>
+            <span class="highlight">We're the flowers in the dustbin</span><br>
+            <span class="highlight">We're the poison in the human machine</span><br>
+            <span class="highlight">We're the romance, behind the scene</span><br>
+            <span class="highlight">We're the future, we're the future</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> the <span class="boxed">Queen</span></span><br>
+            <span class="highlight">We mean it, man</span><br>
+            <span class="highlight">We love our <span class="boxed">Queen</span></span><br>
+            <span class="highlight">God saves</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> the <span class="boxed">Queen</span></span><br>
+            <span class="highlight">Tourists are money</span><br>
+            <span class="highlight">And our figurehead</span><br>
+            <span class="highlight">Is not what she seems</span><br>
+            <span class="highlight">No future, no future</span><br>
+            <span class="highlight">No future, no future</span><br>
+            <span class="highlight">No future for you</span><br>
+            <br>
+            <span class="highlight">No future, no future</span><br>
+            <span class="highlight">No future for me</span><br>
+            <br>
+            <span class="highlight">No future, no future</span><br>
+            <span class="highlight">No future for you</span><br>
+            <br>
+            <span class="highlight">No future, no future</span><br>
+            <span class="highlight">No future for me</span><br>
+            <br>
+            <span class="highlight">No future, no future</span><br>
+            <span class="highlight">No future for you</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> the <span class="boxed">Queen</span></span><br>
+            <span class="highlight">A fascist regime</span><br>
+            <span class="highlight">They made you a moron</span><br>
+            <span class="highlight">Potential H-bomb</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> the <span class="boxed">Queen</span></span><br>
+            <span class="highlight">She's not a human being</span><br>
+            <span class="highlight">There is no future</span><br>
+            <span class="highlight">In England's dreaming</span><br>
+            <br>
+            <span class="highlight">Don't be told about what you want</span><br>
+            <span class="highlight">Don't be told about what you need</span><br>
+            <span class="highlight">No future, there's no future</span><br>
+            <span class="highlight">No future for you</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> the <span class="boxed">Queen</span></span><br>
+            <span class="highlight">God say "bring your needs"</span><br>
+            <span class="highlight">God assigns and yet man pay</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> the <span class="boxed">Queen</span></span><br>
+            <span class="highlight">Tourists are money</span><br>
+            <span class="highlight">And our figurehead</span><br>
+            <span class="highlight">Is not what she seems</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> history</span><br>
+            <span class="highlight">God <span class="boxed">save</span> your mad parade</span><br>
+            <span class="highlight">Lord God, have mercy</span><br>
+            <span class="highlight">All crimes are paid</span><br>
+            <br>
+            <span class="highlight">We're the flowers in the dustbin</span><br>
+            <span class="highlight">We're the poison in the human machine</span><br>
+            <span class="highlight">We're the romance, behind the scene</span><br>
+            <span class="highlight">We're the future, we're the future</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> the <span class="boxed">Queen</span></span><br>
+            <span class="highlight">We mean it, man</span><br>
+            <span class="highlight">We love our <span class="boxed">Queen</span></span><br>
+            <span class="highlight">God saves</span><br>
+            <br>
+            <span class="highlight">God <span class="boxed">save</span> the <span class="boxed">Queen</span></span><br>
+            <span class="highlight">Tourists are money</span><br>
+            <span class="highlight">And our figurehead</span><br>
+            <span class="highlight">Is not what she seems</span><br>
+            <span class="highlight">No future, no future</span><br>
+            <span class="highlight">No future, no future</span><br>
+            <span class="highlight">No future for you</span><br>
+            <br>
+            <span class="highlight">No future, no future</span><br>
+            <span class="highlight">No future for me</span><br>
+            <br>
+            <span class="highlight">No future, no future</span><br>
+            <span class="highlight">No future for you</span><br>
+            <br>
+            <span class="highlight">No future, no future</span><br>
+            <span class="highlight">No future for me</span><br>
+            <br>
+            <span class="highlight">No future, no future</span><br>
+            <span class="highlight">No future for you</span>
+        </div>
+        ```
+
+        <!-- <div class="s-left"></div>
+                <div class="s-right"></div> -->
+        </p>
+    </div>
+
+    <div class="l-stripe">
+        <div class="l-stripe1"></div>
+        <div class="l-stripe2"></div>
+        <div class="l-stripe3"></div>
+        <div class="l-stripe4"></div>
+    </div>
+
+    <div class="t-stripe-b b1">
+        <div class="t-stripe-r"></div>
+        <div class="t-stripe-r2"></div>
+    </div>
+    <div class="t-stripe-b b2">
+        <div class="t-stripe-r"></div>
+        <div class="t-stripe-r2"></div>
+    </div>
+
+    <!-- <div class="hide"></div> -->
+
+</body>
+
+</html>

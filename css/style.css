@@ -1,0 +1,326 @@
+@font-face {
+   font-family: 'unbounded_f';
+   src: url(../fonts/unbounded-fin.woff2) format(woff2);
+   font-weight: 100;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'unbounded_g';
+   src: url(../fonts/unbounded-gras.woff2) format(woff2);
+   font-weight: 900;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'league';
+   src: url(../fonts/league-gothic.ttf) format("truetype");
+   font-weight: 400;
+   font-style: normal;
+}
+
+:root {
+   --fond-haut: #040406;
+   --fond-bas: #1a0508;
+   --texte: #f7e9e6;
+   --lueur: #e0574f;
+}
+
+body.jour {
+   --fond-haut: #fdf1ee;
+   --fond-bas: #f3c4bb;
+   --texte: #1a0508;
+   --lueur: #ff8a7a;
+}
+
+
+h1 {
+   font-family: 'unbounded_g';
+   font-size: clamp(32px, 7.5vw, 110px);
+   white-space: nowrap;
+   text-shadow: 0 0 20px var(--lueur), 0 0 60px var(--lueur);
+}
+
+
+h1 span {
+   display: inline-block;
+   transition: 1s;
+   animation: entree 1.4s ease-out backwards;
+}
+
+@keyframes entree {
+   from {
+      opacity: 0;
+      transform: translateY(60px);
+      filter: blur(8px);
+   }
+
+   to {
+      opacity: 1;
+      transform: none;
+      filter: blur(0);
+   }
+
+}
+
+h1 span:nth-child(1) {
+   animation-delay: 0.2s;
+}
+
+h1 span:nth-child(2) {
+   animation-delay: 0.38s;
+}
+
+h1 span:nth-child(3) {
+   animation-delay: 0.56s;
+}
+
+h1 span:nth-child(4) {
+   animation-delay: 0.74s;
+}
+
+h1 span:nth-child(5) {
+   animation-delay: 0.92s;
+}
+
+h1 span:nth-child(6) {
+   animation-delay: 1.10s;
+}
+
+h1 span:nth-child(7) {
+   animation-delay: 1.28s;
+}
+
+h1 span:nth-child(8) {
+   animation-delay: 1.46s;
+}
+
+h1 span:nth-child(9) {
+   animation-delay: 1.64s;
+}
+
+
+
+
+
+
+.envolee {
+   transform: translateY(-50px);
+   opacity: 0;
+}
+
+
+p {
+   font-family: 'league';
+   font-size: clamp(28px, 4.5vw, 60px);
+   line-height: 1.05;
+   text-transform: uppercase;
+
+
+}
+
+body {
+
+   background: linear-gradient(var(--fond-haut), var(--fond-bas));
+   color: var(--texte);
+   margin: 0;
+
+}
+
+@keyframes apparition {
+   0% {
+      opacity: 0;
+      filter: blur(10px);
+      transform: translateY(40px);
+   }
+
+   30% {
+      opacity: 1;
+      filter: blur(0);
+      transform: none;
+   }
+
+   65% {
+      opacity: 1;
+      filter: blur(0);
+      transform: none;
+   }
+
+   100% {
+      opacity: 0;
+      filter: blur(24px);
+      transform: translateY(-80px) scale(1.15);
+   }
+}
+
+@supports (animation-timeline: view()) {
+   section {
+      animation: apparition linear both;
+      animation-timeline: view();
+   }
+}
+
+header,
+section {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 0 16px;
+}
+
+header {
+   align-items: center;
+   text-align: center;
+}
+
+footer {
+   max-width: 900px;
+   margin: 0 auto;
+   padding: 80px 16px;
+}
+
+section {
+   position: relative;
+}
+
+body {
+   overflow-x: clip;
+}
+
+.punch {
+   position: relative;
+   cursor: pointer;
+   transition: color 0.6s, text-shadow 0.6s;
+}
+
+.sticker {
+   position: absolute;
+   top: 50%;
+   left: 0;
+   width: 220px;
+   opacity: 0;
+   pointer-events: none;
+}
+
+.cupidon.active {
+   color: #ff6fae;
+   text-shadow: 0 0 30px #ff6fae;
+}
+
+.cupidon.active .sticker {
+   animation: traverse 3s ease-in-out forwards;
+}
+
+.ambulanciers.active {
+   color: #ed0404;
+   text-shadow: 0 0 30px #ed0404;
+}
+
+.ambulanciers.active .sticker {
+   animation: traverse 3s ease-in-out forwards;
+}
+
+.police.active {
+   color: #0414ed;
+   text-shadow: 0 0 30px #0414ed;
+}
+
+.police.active .sticker {
+   animation: traverse 3s ease-in-out forwards;
+}
+
+@keyframes traverse {
+   0% {
+      opacity: 0;
+      transform: translateX(-250px) translateY(-50%);
+   }
+
+   15% {
+      opacity: 1;
+   }
+
+   85% {
+      opacity: 1;
+   }
+
+   100% {
+      opacity: 0;
+      transform: translateX(110vw) translateY(-50%);
+   }
+}
+
+.theme {
+   position: fixed;
+   top: 16px;
+   right: 16px;
+   z-index: 10;
+   font-family: 'unbounded_g';
+   color: var(--texte);
+   background: none;
+   border: 1px solid var(--texte);
+   border-radius: 999px;
+   padding: 8px 16px;
+   cursor: pointer;
+   /* arrive en dernier, après la séquence des lettres */
+   animation: entree 1.4s ease-out 2.4s backwards;
+}
+
+.fond {
+   position: fixed;
+   inset: 0;
+   z-index: -1;
+   background-image: url(../img/luv-fond.jpg);
+   background-size: min(100%, 1200px) auto;
+   background-repeat: no-repeat;
+   background-position: center top;
+   opacity: 0.7;
+}
+
+@supports (animation-timeline: scroll()) {
+   .fond {
+      animation: descente linear both;
+      animation-timeline: scroll();
+   }
+}
+
+@keyframes descente {
+   from {
+      background-position: center top;
+   }
+
+   to {
+      background-position: center bottom;
+   }
+}
+
+body.jour .fond {
+   opacity: 0.2;
+}
+
+.credits {
+   font-family: 'unbounded_f';
+   font-size: 12px;
+   line-height: 1.6;
+   text-transform: none;
+   text-align: center;
+   opacity: 0.6;
+}
+
+/* tout en bas du fichier : comme ça, cette règle passe après toutes les autres et gagne */
+@media (prefers-reduced-motion: reduce) {
+
+   section,
+   h1 span,
+   .theme,
+   .fond {
+      animation: none;
+   }
+
+}
+
+
+/* Palette tirée de l'image de fond (noir spatial + rouge des planètes), rangée dans les variables de :root.
+   Polices : Unbounded (titre, bouton), League Gothic (paroles) */

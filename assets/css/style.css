@@ -106,6 +106,7 @@ h1 {
     transform: scaleX(0);
     transform-origin: left;
     animation: lineInX 1.2s ease-in-out forwards;
+    /*modif*/
 
 }
 
